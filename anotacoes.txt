@@ -1,0 +1,20 @@
+expo init plantmanager
+
+	managed workflow
+		blank typescript
+
+expo start
+
+Baixamos os assets e trocamos eles
+
+Criar diretórios
+
+/src/pages
+
+No arquivo Welcome, não colocamos export default de propósito. Se deixar apenas export, o vscode consegue manusear melhor
+
+custom.d.ts serve para parar de dar erro quando fazemos um import de uma imagem e não a utilizamos ainda
+
+Utilizar SafeAreaView ao invés de View, pois no iphone existe aquele retangulo no topo, e utilizar a View faz com que fique escondido atrás do retangulo. Com SafeAreaView não :)
+
+Criado página inicial e componente button
