@@ -1,29 +1,42 @@
 import React from 'react';
-import { SafeAreaView, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView, Text, Image, TouchableOpacity, StyleSheet, Dimensions, View } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 import wateringImg from '../assets/watering.png';
-import { Button } from '../components/Button';
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
 
 export function Welcome() {
+   const navigation = useNavigation();
+
+   function handleStart() {
+      navigation.navigate('UserIdentification');
+   }
+
    return (
       <SafeAreaView style={styles.container}>
-         <Text style={styles.title}>
-            Gerencie {'\n'}
-            suas plantas {'\n'}
-            de forma fácil
-         </Text>
+         <View style={styles.wrapper}>
+            <Text style={styles.title}>
+               Gerencie {'\n'}
+               suas plantas de{'\n'}
+               forma fácil
+            </Text>
 
-         <Image 
-            source={wateringImg} 
-            style={styles.image}
-         />
+            <Image
+               source={wateringImg}
+               style={styles.image}
+               resizeMode="contain"
+            />
 
-         <Text style={styles.subtitle}>
-            Não esqueça mais de regar suas plantas. Nós cuidados de lembrar sempre que precisar.
-         </Text>
+            <Text style={styles.subtitle}>
+               Não esqueça mais de regar suas plantas. Nós cuidados de lembrar sempre que precisar.
+            </Text>
 
-         <Button title={'Oi'} />
+            <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={handleStart}>
+               <Feather name="chevron-right" style={styles.buttonIcon} />
+            </TouchableOpacity>
+         </View>
       </SafeAreaView>
    )
 }
@@ -31,30 +44,35 @@ export function Welcome() {
 const styles = StyleSheet.create({
    container: {
       flex: 1,
+   },
+
+   wrapper: {
+      flex: 1,
       alignItems: 'center',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
+      paddingHorizontal: 20,
    },
 
    title: {
-      fontSize: 32,
+      fontSize: 28,
       fontWeight: 'bold',
       textAlign: 'center',
-      /* color: colors.heading, */
-      color: '#52665A',
-      marginTop: 38
+      color: colors.heading,
+      marginTop: 38,
+      fontFamily: fonts.heading,
+      lineHeight: 34,
    },
 
    subtitle: {
       textAlign: 'center',
       fontSize: 18,
       paddingHorizontal: 20,
-      /* color: colors.heading, */
-      color: '#52665A'
+      color: colors.heading,
+      fontFamily: fonts.text,
    },
 
    button: {
-      /* backgroundColor: colors.green, */
-      backgroundColor: '#32B768',
+      backgroundColor: colors.green,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 16,
@@ -63,14 +81,15 @@ const styles = StyleSheet.create({
       width: 56,
    },
 
-   image: {
-      width: 292,
-      height: 284,
+   buttonIcon: {
+      color: colors.white,
+      fontSize: 32,
    },
 
-   buttonText: {
-      /* color: colors.white, */
-      color: '#FFF',
-      fontSize: 24,
-   }
+   image: {
+      height: Dimensions.get('window').width * 0.7,
+   },
+
+
+
 });

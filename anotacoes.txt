@@ -1,3 +1,4 @@
+Dia 1:
 expo init plantmanager
 
 	managed workflow
@@ -18,3 +19,40 @@ custom.d.ts serve para parar de dar erro quando fazemos um import de uma imagem 
 Utilizar SafeAreaView ao invés de View, pois no iphone existe aquele retangulo no topo, e utilizar a View faz com que fique escondido atrás do retangulo. Com SafeAreaView não :)
 
 Criado página inicial e componente button
+
+
+Dia 2:
+Refatorar o código já criado
+
+Trabalhar com icones
+	expo install @expo/vector-icons
+
+Trabalhando com fontes. Para isso, não precisamos buscar no google fonts e sim no expo google fonts
+	expo install expo-font @expo-google-fonts/jost
+	Para utilizar a fonte no projeto, devemos importá-la no arquivo raíz do projeto
+
+Instalar a lib que vai segurar a tela de splash até a fonte ser carregada. Melhor lib para trabalhar com pré carregamento de fontes
+	expo install expo-app-loading
+
+fonts.ts na pasta /styles. Irá servir como local para salvar a fonte utilizada. Se precisar trocar no futuro, apenas alterar este arquivo.
+
+No SafeAreaView não conseguimos utilizar o padding
+
+Nova page: UserIdentification.tsx
+
+Novo componente: Button.tsx
+
+KeyboardAvoidingView serve para melhorar o comportamento de quando é acionado o teclado, e não foder com o layout
+
+Nova page: Confirmation.tsx
+
+Trabalharemos com navegação agora
+	yarn add @react-navigation/native
+Como estamos no expo, instalar tbm:
+	expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+Instalar tbm a lib para pilha de navegação, que usaremos no nosso app
+	yarn add @react-navigation/stack
+
+Criar pasta /routes e o arquivo dentro dela
+Adicionar no arquivo raiz as rotas
+Criar função nas pages criadas para encaminhar para outras pages
