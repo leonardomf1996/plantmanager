@@ -56,3 +56,38 @@ Instalar tbm a lib para pilha de navegação, que usaremos no nosso app
 Criar pasta /routes e o arquivo dentro dela
 Adicionar no arquivo raiz as rotas
 Criar função nas pages criadas para encaminhar para outras pages
+
+
+Dia 3:
+
+Nova page: PlantSelect.tsx
+Adicionar a tela nas routes, criar função na page Confirmation tbm
+
+Novo componente: Header.tsx
+
+Outra estratégia para lidar com aquele retangulo do iphone e nao ficar na frente dos componentes é utilizando a lib react-native-iphone-x-helper
+	yarn add react-native-iphone-x-helper
+
+Novo componente: EnviromentButton.tsx
+
+Usaremos uma outra estratégia nesse componente para a criação de um botão, utilizando o react-native-gesture-handler
+
+Criar pasta /services e colocar o arquivo server.json, disponivel para download
+Instalar tbm o axios
+	yarn add axios
+	yarn global add json-server (instalar globalmente)
+	json-server ./src/services/server.json --host 192.168.5.50 --port 3333 --delay 700
+
+
+Novo componente: PlantCardPrimary.tsx
+
+Para trabalhar com svg, devemos instalar um lib chamada react-native-svg
+	expo install react-native-svg
+
+Para simular o delay da api e o load dos dados, vamos colocar uma animação para loading
+Procurar por lottiesFiles, pesquisar plant e pegar uma animação. Baixar JSON dai, colocar dentro de assets
+Instalar com a lib de animações
+	expo install lottie-react-native
+Novo componente: Load.tsx
+
+Trabalhar com paginação agora.
