@@ -127,3 +127,15 @@ Novo componente: PlantCardSecondary.tsx
 Utilizar tab bar
 	yarn add @react-navigation/bottom-tabs
 Criar novo arquivo dentro das routes: tab.routes.tsx
+
+
+Dia 5:
+
+Refatorar alguns arquivos
+
+ScrollView no PlantSave
+
+Botão de deletar planta, feito dentro do PlantCardSecondary
+
+API de notificações
+	expo install expo-notifications
