@@ -91,3 +91,39 @@ Instalar com a lib de animações
 Novo componente: Load.tsx
 
 Trabalhar com paginação agora.
+
+
+Dia 4:
+
+Validação de que o user escreveu o nome dele
+
+Alert de react native
+
+AsyncStorage
+É uma API para lidar com armazenamento de dados no próprio dispositivo
+	expo install @react-native-async-storage/async-storage
+Utilizado primeiro na page UserIdentification
+	Por padrão, quando vamos salvar um dado no AsyncStorage, a chave inicia-se pelo nome do app ('@plantmanager:xxx', onde xxx seria o nome da key)
+
+Quando fazemos uma listagem, temos que passar uma key para cada elemento. No ReactJS utilizamos o atributo key. Aqui no React Native, se utiliza keyExtractor
+
+Nova page: PlantSave.tsx
+
+Criado a rota para o PlantSave
+
+
+TimePicker
+	expo install @react-native-community/datetimepicker
+Para agendar horários no futuro (pq nao tem sentido agendar horários do passado), utilizaremos o date-fns 
+	yarn add date-fns
+
+Criar pasta /libs para guardar a interface para as plantas 
+
+Nova página: MyPlants.tsx
+
+Novo componente: PlantCardSecondary.tsx 
+
+
+Utilizar tab bar
+	yarn add @react-navigation/bottom-tabs
+Criar novo arquivo dentro das routes: tab.routes.tsx
